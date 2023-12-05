@@ -1,0 +1,485 @@
+:root {
+  --background-light: #ffffff;
+  --background-dark: #000000;
+  --text-light: #000000;
+  --text-dark: #ffffff;
+
+    --border-light: #000000; /* Border color for light theme */
+    --border-dark: #ffffff; /* Border color for dark theme */
+    /* ...rest of your variables... */
+    --main-font: 'default-font', sans-serif;
+    --main-text-color: black;
+    --dark-mode-text-color: white;
+  }
+  
+  body {
+    font-family: var(--main-font);
+    color: var(--main-text-color);
+    /* other global styles */
+
+  &.light {
+    .hamburger-icon svg,
+    .newfile-icon svg{
+      fill: var(--text-light); /* Set icon color to black in light mode */
+    }
+  }
+
+  &.dark {
+    .hamburger-icon svg,
+    .newfile-icon svg{
+      fill: var(--dark-mode-text-color); /* Set icon color to black in light mode */
+    }
+  }
+}
+
+
+// .dark hamburger-icon svg,
+
+  text {
+    fill: var(--current-text-color); // Use the CSS variable
+  }
+  
+  
+// .app.light {
+//   background-color: var(--background-light);
+//   --border-color: var(--border-light);
+//   color: var(--text-light);
+// }
+
+// .app.dark {
+//   background-color: var(--background-dark);
+//   --border-color: var(--border-dark);
+//   color: var(--text-dark);
+//   // .dark-mode {
+//   color: var(--dark-mode-text-color);
+// }
+.app {
+  //... (other styles)
+
+  &.light {
+    --current-bg-color: var(--background-light);
+    --current-text-color: var(--text-light);
+    --current-border-color: var(--border-light);
+    //... (other variable switches for light theme)
+  }
+
+  &.dark {
+    --current-bg-color: var(--background-dark);
+    --current-text-color: var(--text-dark);
+    --current-border-color: var(--border-dark);
+    //... (other variable switches for dark theme)
+  }
+
+  background-color: var(--current-bg-color);
+  color: var(--current-text-color);
+
+  // Specific style for SVG text elements
+   .text {
+    fill: var(--current-text-color); // Use the theme-based variable
+  }
+}
+/* Basic editor styles */
+.tiptap-container {
+  > * + * {
+    margin-top: 0.75em;
+    z-index: 5;
+  }
+
+  ul,
+  ol {
+    padding: 0 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.1;
+  }
+
+  code {
+    background-color: rgba(97, 97, 97, 0.1);
+    color: #616161;
+  }
+
+  pre {
+    background: #0d0d0d;
+    color: #fff;
+    font-family: 'JetBrainsMono', monospace;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  pre code {
+    color: inherit;
+    padding: 0;
+    background: none;
+    font-size: 0.8rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  blockquote {
+    padding-left: 1rem;
+    border-left: 2px solid rgba(13, 13, 13, 0.1);
+  }
+
+  hr {
+    border: none;
+    border-top: 2px solid rgba(13, 13, 13, 0.1);
+    margin: 2rem 0;
+  }
+
+  /* Added styles for the container and buttons */
+  border: 3px solid #000;
+  border-radius: 0.5rem;
+  padding: 1rem;
+
+  &__header {
+    align-items: center;
+    background: #0d0d0d;
+    border-bottom: 3px solid #0d0d0d;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    display: flex;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    padding: 0.25rem;
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 1.25rem 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__footer {
+    align-items: center;
+    border-top: 3px solid #0d0d0d;
+    color: #0d0d0d;
+    display: flex;
+    flex: 0 0 auto;
+    font-size: 12px;
+    flex-wrap: wrap;
+    font-weight: 600;
+    justify-content: space-between;
+    padding: 0.25rem 0.75rem;
+    white-space: nowrap;
+  }
+
+  /* Some information about the status */
+  &__status {
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+
+    &::before {
+      background: rgba(#0d0d0d, 0.5);
+      border-radius: 50%;
+      content: " ";
+      display: inline-block;
+      flex: 0 0 auto;
+      height: 0.5rem;
+      margin-right: 0.5rem;
+      width: 0.5rem;
+    }
+
+    &--connecting::before {
+      background: #616161;
+    }
+
+    &--connected::before {
+      background: #b9f18d;
+    }
+  }
+
+  &__name {
+    button {
+      background: none;
+      border: none;
+      border-radius: 0.4rem;
+      color: #0d0d0d;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 0.25rem 0.5rem;
+
+      &:hover {
+        background-color: #0d0d0d;
+        color: #fff;
+      }
+    }
+  }
+}
+
+/* Give a remote user a caret */
+.collaboration-cursor__caret {
+  border-left: 1px solid #0d0d0d;
+  border-right: 1px solid #0d0d0d;
+  margin-left: -1px;
+  margin-right: -1px;
+  pointer-events: none;
+  position: relative;
+  word-break: normal;
+}
+
+/* Render the username above the caret */
+.collaboration-cursor__label {
+  border-radius: 3px 3px 3px 0;
+  color: #0d0d0d;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  left: -1px;
+  line-height: normal;
+  padding: 0.1rem 0.3rem;
+  position: absolute;
+  top: -1.4em;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.tiptap-container {
+  // border: 3px solid #000;
+  border: 3px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.tiptap:focus {
+  outline: none;
+}
+
+/* Button styles (assuming your buttons have a "button" class) */
+button {
+  border: 1px solid hsl(0, 0%, 0%);
+  border-radius: 0;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  color: black;
+  margin: 0.25rem;
+}
+
+/* Add specific styles for active buttons as needed */
+button.is-active {
+  /* Add your active button styles here */
+}
+
+button:hover {
+  background-color: gray;
+}
+
+
+.tiptap-container p.is-empty::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.tiptap p.is-empty::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.tiptap-container p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.node-view {
+  background: #FAF594;
+  border: 3px solid #0D0D0D;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  position: relative;
+  
+  .input-field {
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #0D0D0D;
+  }
+
+  .generate-button, .run-button {
+    margin: 1rem;
+    padding: 0.5rem;
+    background-color: #0D0D0D;
+    color: #FAF594;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten(#0D0D0D, 10%);
+    }
+  }
+
+  .code-container, .output-container {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    border: 1px solid #0D0D0D;
+  }
+}
+
+.label {
+  margin-left: 1rem;
+  background-color: #0D0D0D;
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.content {
+  margin-top: 1.5rem;
+  padding: 1rem;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: black;
+  margin: 20px 0;
+}
+
+
+ /* Define the button styles with the new class name */
+ .quick-click-button {
+  border: 1px solid hsl(0, 0%, 0%);
+  border-radius: 0;
+  background-color: white;
+  // padding: 0.5rem 1rem;
+  color: black;
+  // margin: 0.25rem;
+  cursor: pointer; /* Add a pointer cursor for interaction */
+  transition: background-color 0.3s; /* Add a smooth transition for background color changes */
+}
+
+/* Define the button's hover effect */
+.quick-click-button:hover {
+  background-color: gray; /* Change to the desired hover background color */
+}
+
+/* Remove the active state styles to prevent them from being applied */
+.quick-click-button:active {
+  background-color: transparent; /* Remove the active background color */
+  /* You can also adjust other styles here if needed */
+}
+
+/* Define focus styles for accessibility */
+.quick-click-button:focus {
+  outline: none; /* Remove the default focus outline */
+  /* Add your preferred focus styles here, if any */
+}
+
+/* Define focus styles when using keyboard navigation */
+.quick-click-button:focus-visible {
+  outline: 2px solid blue; /* Change to your preferred focus style */
+  /* You can add additional styles for better focus visibility */
+}
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 24px;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite; /* Apply animation */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.node-view-ai {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  // background-color:var(--border-color);
+  border: 3px solid hsl(0, 0%, 0%);
+  z-index: 5; /* Adjust the value as needed */
+    padding: 0 10px 10px 10px;
+  border-radius: 0.5rem;
+
+}
+
+.node-view-ai-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px; /* Add some spacing between input and other elements */
+  
+}
+
+.node-view-ai-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-bottom: 10px; /* Add some spacing between button and other elements */
+}
+
+.code-output {
+  border: 1px solid #ccc;
+  padding: 5px;
+  width: 100%;
+  flex-grow: 1; /* Allow the CodeMirror textarea to expand and fill available space */
+  overflow: auto; /* Add a scrollbar if content exceeds the container height */
+}
+
+.node-view-ai-run-button {
+  /* Add styles for the "Run Code" button, if needed */
+}
+
+
+.node-view-ai-label {
+  max-width: max-content;
+  // display: inline-block; /* Change the display to inline-block */
+  background-color: #0D0D0D;
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+ margin-bottom: 10px;
+}
+
+
+.cm-editor.cm-focused { outline: none }

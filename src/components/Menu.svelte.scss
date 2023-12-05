@@ -1,0 +1,324 @@
+.relative {
+    position: relative;
+  }
+  
+  .absolute {
+    position: absolute;
+  }
+  
+  .bottom-5 {
+    bottom: 1.25rem;
+  }
+  
+  .right-5 {
+    right: 1.25rem;
+  }
+  
+  .z-10 {
+    z-index: 10;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .h-8 {
+    height: 2rem;
+  }
+  
+  .w-8 {
+    width: 2rem;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  
+  .transition-colors {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+  
+  .hover\:bg-stone-100:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .active\:bg-stone-200:active {
+    background-color: #e1e1e1;
+  }
+  
+  .sm\:bottom-auto {
+    bottom: auto;
+  }
+  
+  .sm\:top-5 {
+    top: 1.25rem;
+  }
+  
+  .w-52 {
+    width: 13rem;
+  }
+  
+  .divide-y > :not([hidden]) ~ :not([hidden]) {
+    border-top-width: 1px;
+    border-top-color: #d3d3d3;
+  }
+  
+  .p-2 {
+    padding: 0.5rem;
+  }
+  
+  .text-xs {
+    font-size: 0.75rem;
+  }
+  
+  .font-medium {
+    font-weight: 500;
+  }
+  
+  .text-stone-500 {
+    color: #737373;
+  }
+  
+  .text-stone-600 {
+    color: #666666;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  
+  .px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .hover\:bg-stone-100:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .hover\:bg-stone-100:active {
+    background-color: #e1e1e1;
+  }
+  
+  .hover-bg-stone-100:hover {
+    background-color: #f5f5f5; /* Define the desired background color */
+  }
+  
+  .active-bg-stone-200:active {
+    background-color: #e1e1e1; /* Define the desired background color */
+  }
+  
+
+  /* menu.scss */
+  
+  .hamburger-icon {
+    cursor: pointer;
+    transition: transform 0.3s, scale 0.3s; /* Added scaling transition */
+  }
+  
+  .hamburger-icon.open {
+    transform: rotate(180deg); /* Rotate to X icon when open */
+  }
+  
+  .hamburger-icon.scale-up:hover {
+    transform: scale(1.2); /* Scale up on hover */
+  }
+  
+  
+    .menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 250px;
+      background-color: #fff;
+      transition: right 0.3s; /* Add a transition for smooth animation */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  
+    .menu-open {
+      right: 0px; /* Slide to the right when open */
+    }
+  
+    .menu-content {
+      width: 100%;
+      padding: 20px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .hamburger-icon {
+      position: absolute;
+      top: 0;
+      left: -250;
+      margin: 10px;
+
+    }
+
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      // justify-content: space-between;
+    }
+    
+    .theme-toggle > * {
+      margin-right: 10px;
+    }
+
+    .button-icon {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      width: max-content;
+    }
+    
+    .button-icon svg {
+      // margin-right: 8px;
+    }
+
+    .up-down-button {
+      // display: block;
+      display: flex;
+  flex-direction: column;
+  // gap: 2;
+      // margin-bottom: 2px;
+    }
+
+    .button-up-down {
+      display: inline-flex;
+      align-items: center;
+      padding: 1px 14px;
+      width: max-content;
+      margin-right: 0px;
+    }
+
+
+
+     /* menu_left */
+  
+  .newfile-icon {
+    cursor: pointer;
+    transition: transform 0.3s, scale 0.3s; /* Added scaling transition */
+  }
+  
+  .newfile-icon.open {
+    transform: rotate(180deg); /* Rotate to X icon when open */
+  }
+  
+  .newfile-icon.scale-up:hover {
+    transform: scale(1.2); /* Scale up on hover */
+  }
+  
+  
+    .menu-left {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      background-color: #fff;
+      transition: right 0.3s; /* Add a transition for smooth animation */
+      display: flex;
+      flex-direction: column;
+      // align-items: flex-end;
+    }
+  
+    .menu-left {
+      // left: 0px; /* Slide to the right when open */
+    }
+  
+    .menu-left-content {
+      width: 100%;
+      padding: 20px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    
+    .menu-left-row {
+      display: flex-end;
+      flex-direction: row;
+    }
+
+    .newfile-icon {
+      position: absolute;
+      top: 0;
+      right: -250;
+      margin: 10px;
+
+    }
+
+    .themeleft-toggle {
+      display: flex;
+      flex-direction: row; 
+      justify-content: flex-end;
+      align-items: center; 
+    }
+    
+    .themeleft-toggle > * {
+      margin-left: 10px;
+    }
+
+
+.saved-files-menu {
+  background-color: #F7F292;
+  border: 3px solid black;
+  width: 90%;
+}
+
+
+/* Add this CSS to your SCSS */
+.saved-files-menu ul {
+  list-style: none;
+  padding: 0;
+  display: grid; /* Use grid container */
+  grid-template-columns: 1fr; /* Stack inner elements in a single column */
+  align-items: start; /* Align items to the start of the ul */
+}
+
+.file-item {
+  cursor: pointer;
+  transition: background-color 0.2s; /* Add a smooth background-color transition */
+  width: 100%;
+  text-align: center; /* Add this line to align the content to the left */
+  // padding-left: 10px;
+  // padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.file-item:hover {
+background-color: #f0f0f0; /* Replace with the desired background color */
+}
+
+.file-item.hovered {
+background-color: #333; /* Darken the background on hover */
+color: #fff; /* Set the text color to white on hover */
+}

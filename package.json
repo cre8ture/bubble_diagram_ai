@@ -1,0 +1,30 @@
+{
+	"name": "my-app",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.20.4",
+		"@zerodevx/svelte-toast": "^0.9.5",
+		"mdsvex": "^0.11.0",
+		"sass": "^1.69.1",
+		"svelte": "^4.0.5",
+		"vite": "^4.4.2"
+	},
+	"type": "module",
+	"dependencies": {
+		"@codemirror/lang-markdown": "^6.2.2",
+		"@codemirror/state": "^6.2.1",
+		"@codemirror/view": "^6.21.3",
+		"ai": "^2.2.14",
+		"codemirror": "^6.0.1",
+		"d3": "^7.8.5",
+		"marked": "^9.1.1",
+		"openai": "^4.11.1"
+	}
+}
